@@ -3,12 +3,24 @@ import javax.swing.JOptionPane;
 public class Controller {
 	 private Model model;
 	 private View view;
+     private Scanner scan;
+
+
 	 
-	 public Controller(Model m, View v) {
+	 public Controller(Model m, View v, Scanner s) {
 	  model = m;
 	  view = v;
+      scan = s;
 
 	 }
+
+     public void initController() {
+         scan.getScanButton().addActionListener(e -> scanItems());
+     }
+
+     public void scanItems(){
+
+     }
 
      /*
 	 
