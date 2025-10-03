@@ -20,7 +20,7 @@ public class Model {
     }
 
     private void readFromData(){
-        try (BufferedReader br = new BufferedReader(new FileReader("productInfo.txt"))){
+        try (BufferedReader br = new BufferedReader(new FileReader("./SwingMVC/src/productInfo.txt"))){
             String line;
             br.readLine();
             while((line = br.readLine()) != null){
@@ -41,7 +41,7 @@ public class Model {
         return codes;
     }
 
-    public void scannedProduct(Product product) {
+    public void addProduct(Product product) {
         scannedProducts.add(product);
         subTotal += product.getPrice();
     }

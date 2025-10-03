@@ -32,17 +32,19 @@ public class View {
 
         //text area
         scannedItems = new JTextArea(3,3);
-
+        scannedItems.setFont(new Font("Monospaced", Font.PLAIN, 14));
         scannedItems.setBackground(Color.cyan);
-        scannedItems.setText("This is some text inside a non editable field");
         scannedItems.setEditable(false);
+        scannedItems.setMargin(new Insets(5, 5, 5, 5));
+
 
 
         scroll = new JScrollPane(scannedItems);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
 
-        scroll.setPreferredSize(new Dimension(250, 150));
+        scroll.setPreferredSize(new Dimension(250 + 21, 150));
 
 
 
@@ -52,7 +54,7 @@ public class View {
 
 
 
-        subTotal = new JLabel("Subtotal: 0.00");
+        subTotal = new JLabel("Subtotal: $0.00");
         subTotal.setHorizontalAlignment(SwingConstants.CENTER);
         subTotal.setFont(new Font("SansSerif", Font.PLAIN, 14));
         frame.add(subTotal, BorderLayout.SOUTH);
