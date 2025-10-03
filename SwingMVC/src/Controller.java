@@ -7,8 +7,10 @@ public class Controller {
 	 public Controller(Model m, View v) {
 	  model = m;
 	  view = v;
-	  initView();
+
 	 }
+
+     /*
 	 
 	 public void initView() {
 	  view.getFirstnameTextfield().setText(model.getFirstname());
@@ -39,5 +41,5 @@ public class Controller {
 	 private void sayBye() {
 	  System.exit(0);
 	 }
-	 
+	 */
 }

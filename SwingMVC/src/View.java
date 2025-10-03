@@ -1,136 +1,79 @@
-import java.awt.BorderLayout;
- 
-import javax.swing.GroupLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+import java.awt.*;
+
+import javax.swing.*;
 
 public class View {
-	// View uses Swing framework to display UI to user
-	 private JFrame frame;
-	 private JLabel firstnameLabel;
-	 private JLabel lastnameLabel;
-	 private JTextField firstnameTextfield;
-	 private JTextField lastnameTextfield;
-	 private JButton firstnameSaveButton;
-	 private JButton lastnameSaveButton;
-	 private JButton hello;
-	 private JButton bye;
-	 
-	 public View(String title) {
-	  frame = new JFrame(title);
-	  frame.getContentPane().setLayout(new BorderLayout());
-	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	  frame.setSize(500, 120);
-	  frame.setLocationRelativeTo(null);
-	  frame.setVisible(true);
-	 
-	  // Create UI elements
-	  firstnameLabel = new JLabel("Firstname :");
-	  lastnameLabel = new JLabel("Lastname :");
-	  firstnameTextfield = new JTextField();
-	  lastnameTextfield = new JTextField();
-	  firstnameSaveButton = new JButton("Save firstname");
-	  lastnameSaveButton = new JButton("Save lastname");
-	  hello = new JButton("Hello!");
-	  bye = new JButton("Bye!");
-	 
-	  // Add UI element to frame
-	  GroupLayout layout = new GroupLayout(frame.getContentPane());
-	  layout.setAutoCreateGaps(true);
-	  layout.setAutoCreateContainerGaps(true);
-	  layout.setHorizontalGroup(layout.createSequentialGroup()
-	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(firstnameLabel)
-	    .addComponent(lastnameLabel))
-	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(firstnameTextfield)
-	    .addComponent(lastnameTextfield))
-	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(firstnameSaveButton)
-	    .addComponent(lastnameSaveButton))
-	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(hello)
-	    .addComponent(bye)));
-	  layout.setVerticalGroup(layout.createSequentialGroup()
-	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(firstnameLabel)
-	    .addComponent(firstnameTextfield).addComponent(firstnameSaveButton).addComponent(hello))
-	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(lastnameLabel)
-	    .addComponent(lastnameTextfield).addComponent(lastnameSaveButton).addComponent(bye)));
-	 
-	  layout.linkSize(SwingConstants.HORIZONTAL, firstnameSaveButton, lastnameSaveButton);
-	  layout.linkSize(SwingConstants.HORIZONTAL, hello, bye);
-	  frame.getContentPane().setLayout(layout);
-	 }
-	 
-	 public JFrame getFrame() {
-	  return frame;
-	 }
-	 
-	 public void setFrame(JFrame frame) {
-	  this.frame = frame;
-	 }
-	 
-	 public JLabel getFirstnameLabel() {
-	  return firstnameLabel;
-	 }
-	 
-	 public void setFirstnameLabel(JLabel firstnameLabel) {
-	  this.firstnameLabel = firstnameLabel;
-	 }
-	 
-	 public JLabel getLastnameLabel() {
-	  return lastnameLabel;
-	 }
-	 
-	 public void setLastnameLabel(JLabel lastnameLabel) {
-	  this.lastnameLabel = lastnameLabel;
-	 }
-	 
-	 public JTextField getFirstnameTextfield() {
-	  return firstnameTextfield;
-	 }
-	 
-	 public void setFirstnameTextfield(JTextField firstnameTextfield) {
-	  this.firstnameTextfield = firstnameTextfield;
-	 }
-	 
-	 public JTextField getLastnameTextfield() {
-	  return lastnameTextfield;
-	 }
-	 
-	 public void setLastnameTextfield(JTextField lastnameTextfield) {
-	  this.lastnameTextfield = lastnameTextfield;
-	 }
-	 
-	 public JButton getFirstnameSaveButton() {
-	  return firstnameSaveButton;
-	 }
-	 
-	 public void setFirstnameSaveButton(JButton firstnameSaveButton) {
-	  this.firstnameSaveButton = firstnameSaveButton;
-	 }
-	 
-	 public JButton getLastnameSaveButton() {
-	  return lastnameSaveButton;
-	 }
-	 
-	 public void setLastnameSaveButton(JButton lastnameSaveButton) {
-	  this.lastnameSaveButton = lastnameSaveButton;
-	 }
-	 
-	 public JButton getHello() {
-	  return hello;
-	 }
-	 
-	 public void setHello(JButton hello) {
-	  this.hello = hello;
-	 }
-	 
-	 public JButton getBye() {
-	  return bye;
-	 }
-	 
-	 public void setBye(JButton bye) {
-	  this.bye = bye;
-	 }
-	 
+    // View uses Swing framework to display UI to user
+    private JFrame frame;
+    private JLabel titleLabel;
+    private JTextArea scannedItems;
+    private JScrollPane scroll;
+    private JLabel subTotal;
+
+
+
+    public View() {
+        frame = new JFrame("test");
+        frame.getContentPane().setLayout(new BorderLayout());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 300);
+        frame.setLocationRelativeTo(null);
+
+        frame.setLayout(new BorderLayout(10,10));
+
+        //title
+        titleLabel = new JLabel();
+        titleLabel.setText("Scanned Items");
+        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 18));
+        titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        frame.add(titleLabel, BorderLayout.NORTH);
+        frame.setResizable(false);
+
+
+        //text area
+        scannedItems = new JTextArea(3,3);
+
+        scannedItems.setBackground(Color.cyan);
+        scannedItems.setText("This is some text inside a non editable field");
+        scannedItems.setEditable(false);
+
+
+        scroll = new JScrollPane(scannedItems);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+
+        scroll.setPreferredSize(new Dimension(250, 150));
+
+
+
+        JPanel centerPanel = new JPanel(new GridBagLayout());
+        centerPanel.add(scroll);
+        frame.add(centerPanel, BorderLayout.CENTER);
+
+
+
+        subTotal = new JLabel("Subtotal: 0.00");
+        subTotal.setHorizontalAlignment(SwingConstants.CENTER);
+        subTotal.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        frame.add(subTotal, BorderLayout.SOUTH);
+
+
+
+
+
+
+
+
+        frame.setVisible(true);
+    }
+
+    public JTextArea getScannedItems() {
+        return scannedItems;
+    }
+
+    public JLabel getSubTotal() {
+        return subTotal;
+    }
 }
+
+
