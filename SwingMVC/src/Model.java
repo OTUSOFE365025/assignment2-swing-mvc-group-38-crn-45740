@@ -8,13 +8,15 @@ public class Model {
 
     private ArrayList<Product> scannedProducts = new ArrayList<Product>();
     private HashMap<Integer, Product> productLookUp = new HashMap<>();
+    private ArrayList<Integer> codes = new ArrayList<Integer>();
+    private double subTotal = 0;
+
+
 
 
     public Model(){
         readFromData();
-        productLookUp.keySet();
-
-
+        codes.addAll(productLookUp.keySet());
     }
 
     private void readFromData(){
@@ -34,6 +36,24 @@ public class Model {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<Integer> getCodes() {
+        return codes;
+    }
+
+    public void scannedProduct(Product product) {
+        scannedProducts.add(product);
+        subTotal += product.getPrice();
+    }
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public Product processUPC(int code) {
+        return productLookUp.get(code);
+    }
+
 
 
 

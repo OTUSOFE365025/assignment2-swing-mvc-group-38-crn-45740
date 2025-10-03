@@ -1,9 +1,12 @@
 import javax.swing.JOptionPane;
- 
+import java.util.ArrayList;
+
+
 public class Controller {
 	 private Model model;
 	 private View view;
      private Scanner scan;
+     private ArrayList<Integer> codes;
 
 
 	 
@@ -11,14 +14,24 @@ public class Controller {
 	  model = m;
 	  view = v;
       scan = s;
+      codes =  model.getCodes();
 
 	 }
 
      public void initController() {
-         scan.getScanButton().addActionListener(e -> scanItems());
+         scan.getScanButton().addActionListener(e -> scanProduct());
      }
 
-     public void scanItems(){
+     public void scanProduct(){
+
+       int randomIndex = (int)(Math.random()*codes.size());
+
+       Product scannedProduct = model.processUPC(codes.get(randomIndex));
+       model.scannedProduct(scannedProduct);
+
+
+
+
 
      }
 
