@@ -33,7 +33,7 @@ public class Scanner {
 		  scannerPanel.add(scanButton);
 		  frame.getContentPane().add(scannerPanel);
 		  
-		  scanButton.addActionListener(e -> generateUPC());
+		 // scanButton.addActionListener(e -> generateUPC());
 	 }
 
 	private int generateUPC() {

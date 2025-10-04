@@ -1,0 +1,21 @@
+UPC CODE    Product        Price
+10001       Milk           $3.25
+10002       Bread          $2.50
+10003       Eggs           $4.10
+10004       Butter         $5.75
+10005       Cheese         $6.20
+10006       Rice           $2.90
+10007       Pasta          $1.80
+10008       Apples         $3.00
+10009       Bananas        $1.50
+10010       Carrots        $2.20
+10011       Tomatoes       $2.80
+10012       Potatoes       $2.40
+10013       Onions         $1.90
+10014       Chicken        $7.50
+10015       Beef           $9.30
+10016       Fish           $8.00
+10017       Yogurt         $3.60
+10018       Cereal         $4.50
+10019       Juice          $3.75
+10020       Coffee         $6.80
