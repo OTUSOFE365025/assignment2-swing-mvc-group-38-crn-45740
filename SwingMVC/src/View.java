@@ -13,7 +13,7 @@ public class View {
 
 
     public View() {
-        frame = new JFrame("test");
+        frame = new JFrame("Cash Register Display");
         frame.getContentPane().setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 300);
@@ -33,7 +33,7 @@ public class View {
         //text area
         scannedItems = new JTextArea(3,3);
         scannedItems.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        scannedItems.setBackground(Color.cyan);
+        scannedItems.setBackground(Color.white);
         scannedItems.setEditable(false);
         scannedItems.setMargin(new Insets(5, 5, 5, 5));
 
