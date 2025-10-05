@@ -12,7 +12,7 @@ Example of an MVC design based on Swing. Answer questions 1 & 2 in this README f
 Swing is a GUI framework for Java, part of the Java Foundation Classes (JFC). It provides a wide range of cross-platform components that allow developers to effortlessly create modern and interactive desktop applications. It was designed to replace the old Abstract Window Toolkit (AWT), which was platform-dependent unlike swing. Swing, however is platform independent which was achieved through it being completely written in java. due to this, one can write Swing GUI applications and have them feel the same across many devices. Swing was also designed with MVC architecture in mind, giving developers fine control over the design and behaviour of their applications.
 
 ### Class Diagram
-Here is a UML class diagram for the swing classes that were used in the example. The other non-swing superclasses are also included up to the root class (java.lang.Object).
+Here is a UML class diagram for the swing MVC components we created for the cash register. The model, view, and controller are included as well as the scanner since the controller receives scans from it. The relationships are simply association, with the controller at the center. The controller is the only one aware of the view, model, and scanner. 
 ![Swing UML Diagram](UML_Class_Diagram.png)
 
 ## Q2
