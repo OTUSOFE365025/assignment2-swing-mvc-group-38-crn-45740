@@ -6,7 +6,7 @@ Example of an MVC design based on Swing. Answer questions 1 & 2 in this README f
 |---|---|------------------|
 | William Lévesque | 100916180 | Q1 , Q2          |
 | Saif Siddiqui | 100862747 | Code development |
-| Tavan Mohammed | 100906916 |                  |
+| Tavan Mohammed | 100906916 | Sequence diagram                 |
 
 ## Q1
 Swing is a GUI framework for Java, part of the Java Foundation Classes (JFC). It provides a wide range of cross-platform components that allow developers to effortlessly create modern and interactive desktop applications. It was designed to replace the old Abstract Window Toolkit (AWT), which was platform-dependent unlike swing. Swing, however is platform independent which was achieved through it being completely written in java. due to this, one can write Swing GUI applications and have them feel the same across many devices. Swing was also designed with MVC architecture in mind, giving developers fine control over the design and behaviour of their applications.
