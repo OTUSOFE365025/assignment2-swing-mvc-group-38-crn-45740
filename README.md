@@ -29,7 +29,12 @@ Model - View: For the swing implementation, the view does not query the model ev
 Coupling: For the github example, the system is tightly coupled through the controller. The observer version makes this easier since the view and controller are more loosly coupled. Same with the view and model, since they work off the observer pattern. This also has the effect of making adding views an easier task, since they are not tightly coupled, and simply need to be added as observers to the model.
 
 ## Q3
-Explain (maybe)
+Our code implementation follows a simple MVC model:
+
+The cash register acts as the model that holds the basic business logic of a typical register, where it can calculate the total and store the scanned products. It can also read from the file to get product information and store it in a list that is used by the controller to randomly select a product.
+The view is the user interface, which is created using the Swing framework and showcases the list of products, the subtotal, and the interface for the scanner button.
+The controller is the middle point between the cash register and the view. It can utilize the cash register's methods to get product information and the subtotal once the scanner button is triggered, and manipulate the view to showcase the given data.
+
 
 ## Q4
 Insert sequence diagram pic
