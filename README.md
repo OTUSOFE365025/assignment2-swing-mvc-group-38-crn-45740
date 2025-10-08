@@ -13,7 +13,7 @@ Swing is a GUI framework for Java, part of the Java Foundation Classes (JFC). It
 
 ### Class Diagram
 Here is a UML class diagram for the swing MVC components we created for the cash register. The model, view, and controller are included as well as the scanner since the controller receives scans from it. The relationships are simply association, with the controller at the center. The controller is the only one aware of the view, model, and scanner. 
-![Swing UML Diagram](UML_Class_Diagram.png)
+![UML Class Diagram](UML_Class_Diagram.png)
 
 ## Q2
 The github example swing program implements the MVC pattern well, but with some differences compared to what is in the lecture notes. To begin, the model does only hold buisness logic/data such as the first and last names and the getters/setters. The view contains no buisness logic/data and purely crates the user interface, minus the interaction logic. This does follow the MVC pattern. For the controller, it holds references to both the view and model to act as a mediator between the two. The controller initializes both, listens for events coming from the view and instructs the model on what to do. In this example, the view never gets updated.
@@ -37,4 +37,4 @@ The controller is the middle point between the cash register and the view. It ca
 
 
 ## Q4
-Insert sequence diagram pic
+![UML Sequence Diagram](Sequence_diagram.jpg)
